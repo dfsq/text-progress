@@ -1,0 +1,26 @@
+{
+  "name": "text-progress",
+  "main": "dist/text-progress.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dfsq/text-progress",
+  "authors": [
+    "Aliaksandr Astashenkau <dfsq.dfsq@gmail.com>"
+  ],
+  "description": "Simple text-based progress indicators.",
+  "keywords": [
+    "progress bar",
+    "text",
+    "terminal",
+    "indicator"
+  ],
+  "moduleType": [
+	"umd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ]
+}
