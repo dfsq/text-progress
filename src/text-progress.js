@@ -100,7 +100,7 @@
 			var defaults = {
 				width: 20,
 				charCompleted: '=',
-				charRemaining: '-',
+				charRemaining: '−',
 				template: '[<span class="completed">${completed}</span><span class="remaining">${remaining}</span>] ${percent}%'
 			};
 
@@ -120,7 +120,31 @@
 					});
 				}
 			};
-		}
+		},
+
+		changes: function(options) {
+
+            var defaults = {
+                charInserted: '+',
+                charDeleted: '−',
+                template: '${total} <span class="completed">${inserted}</span><span class="remaining">${deleted}</span>'
+            };
+
+            return {
+                options: utils.mixin(defaults, options),
+                render: function(percent, value, max) {
+
+                    var insertedStr = Array(value + 1).join(this.options.charInserted),
+                        deletedStr = Array(this.options.total - value + 1).join(this.options.charDeleted);
+
+                    return utils.template(this.options.template, {
+                        inserted: insertedStr,
+                        deleted: deletedStr,
+                        total: this.options.total
+                    });
+                }
+            };
+        }
 	};
 
 	return TextProgress;
