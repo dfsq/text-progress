@@ -1,16 +1,40 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-
-	<link rel="stylesheet" href="styles.css"/>
-	<script src="../src/text-progress.js"></script>
-
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<link rel="stylesheet" href="demo.css">
 </head>
+
 <body>
 
-	<h1>Text Progress</h1>
+<!-- http://purecss.io/start/ -->
+<!-- http://www.w3schools.com/charsets/ref_html_entities_4.asp -->
+
+<div class="content">
+
+	<h1>
+		Text Progress
+		<span class="header-progress progress"></span>
+	</h1>
+
+	<p>TextProgress is a very simple text-based progress indicator. Insipored by terminal like proress bars it can be used to render simlpe progress.</p>
+
+	<h3>What it's not</h3>
+
+	<p>TextProgress is not progress bar in the sctrict sense. It doesn't have methods for animation or nice transitions. All it does is provide textual rendering of the current state of the process, etc.</p>
+
+	<h3>API</h3>
+
+</div>
+
+	<!-- build:js text-progress.min.js -->
+	<script src="../src/text-progress.js"></script>
+	<!-- endbuild -->
+
+	<script src="demo.js"></script>
 
 </body>
+
 </html>
