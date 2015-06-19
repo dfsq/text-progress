@@ -1,0 +1,7 @@
+.progress {
+	font-family: monospace, 'Courier New', Courier;
+	white-space: pre;
+}
+.progress .completed {
+	color: #3dac4a;
+}

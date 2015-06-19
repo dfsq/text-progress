@@ -1,0 +1,16 @@
+body {
+	background: url(bg.png);
+	color: #EEE;
+}
+
+.content {
+	margin: 0 auto 50px;
+	padding: 0 2em;
+	max-width: 800px;
+	line-height: 1.6em;
+}
+.content h1 {
+	font-size: 3em;
+	margin: 70px 0 50px;
+}
+

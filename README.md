@@ -2,6 +2,8 @@
 
 Simple text-based progress indicators.
 
+## Insalation
+
 ## Demo
 
 Take a look at hosted demo

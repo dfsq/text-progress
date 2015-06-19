@@ -14,6 +14,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.3",
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-gh-deploy": "^0.1.2",
     "grunt-karma": "^0.11.0",
@@ -21,7 +22,8 @@
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.35",
     "karma-cli": "0.0.4",
-    "karma-jasmine": "^0.3.5"
+    "karma-jasmine": "^0.3.5",
+    "load-grunt-tasks": "^3.2.0"
   },
   "scripts": {
     "test": "grunt test"
