@@ -73,8 +73,8 @@ module.exports = function(grunt) {
 
 		ghDeploy: {
 			options: {
-				repository: '<%= pkg.repositiry.url %>',
-				deployPath: 'demo'
+				repository: '<%= pkg.repository.url %>',
+				deployPath: 'tmp'
 			}
 		}
 	});
@@ -92,8 +92,8 @@ module.exports = function(grunt) {
 		grunt.task.run('copy');
 		//grunt.task.run('karma:dist');
 		grunt.task.run('usemin');
-		//grunt.task.run('ghDeploy');
-		//grunt.task.run('clean:deploy');
+		grunt.task.run('ghDeploy');
+		grunt.task.run('clean:deploy');
 	});
 
 	grunt.registerTask('server', ['connect']);
