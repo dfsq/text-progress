@@ -4,11 +4,12 @@
 <head>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="libs/prismjs/prismjs.css">
 	<link rel="stylesheet" href="styles/demo.css">
 	<link rel="stylesheet" href="text-progress.min.css">
+
+	<script src="text-progress.min.js"></script>
 </head>
 
 <body>
@@ -31,13 +32,49 @@
 
 		<p>TextProgress is a very simple text-based progress indicator. Insipored by terminal like proress bars it can be used to render simlpe progress.</p>
 
-		<h3>Usage</h3>
 
-		<p>Installation useing bower:</p>
+		<h3>Instalation</h3>
+
+		<p>Installation using bower:</p>
 
 		<pre class="language-bash"><code>bower install --save text-progress</code></pre>
 
 		Or simply download <code>text-progress.js</code> and <code>text-progress.css</code> files and put them into your assets folder.
+
+
+		<h3>Usage</h3>
+
+		<p>Create instance of TextProgress with of of predefined progress types:</p>
+
+		<pre class="language-javascript"><code>
+var changes = new TextProgress({
+	type: {
+		name: 'changes',
+		total: 6,
+		template: '${total} <span class="completed">${completed}</span><span class="remaining">${remaining}</span>'
+	},
+	element: document.querySelector('.header-progress')
+});
+changes.set(4);</code></pre>
+
+		<h4>Result</h4>
+
+		<div class="demo">
+			<pre>modified README.md  |  <span id="git-log"></span></pre>
+		</div>
+
+		<script id="demo1">
+			var changes = new TextProgress({
+				type: {
+					name: 'changes',
+					total: 6,
+					template: '${total} <span class="completed">${completed}</span><span class="remaining">${remaining}</span>'
+				},
+				element: document.querySelector('#git-log')
+			});
+			changes.set(4);
+		</script>
+
 
 		<h3>What it's not</h3>
 
@@ -53,9 +90,8 @@
 
 	</div>
 
-	<script src="text-progress.min.js"></script>
-	<script src="scripts/demo.js"></script>
 	<script src="libs/prismjs/prismjs.min.js"></script>
+	<script src="scripts/demo.js"></script>
 
 </body>
 
