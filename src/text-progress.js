@@ -76,8 +76,7 @@
 
 		getRenderer: function(type) {
 			var options = typeof type === 'object' ? type : {name: type};
-			var renderer = new TextProgress.TYPES[options.name](options);
-			return renderer;
+			return new TextProgress.TYPES[options.name](options);
 		},
 
 		getPercent: function() {
@@ -125,21 +124,21 @@
 		changes: function(options) {
 
             var defaults = {
-                charInserted: '+',
-                charDeleted: '−',
-                template: '${total} <span class="completed">${inserted}</span><span class="remaining">${deleted}</span>'
+				charCompleted: '+',
+				charRemaining: '−',
+                template: '${total} <span class="completed">${completed}</span><span class="remaining">${remaining}</span>'
             };
 
             return {
                 options: utils.mixin(defaults, options),
-                render: function(percent, value, max) {
+                render: function(percent, value) {
 
-                    var insertedStr = Array(value + 1).join(this.options.charInserted),
-                        deletedStr = Array(this.options.total - value + 1).join(this.options.charDeleted);
+                    var completedStr = new Array(value + 1).join(this.options.charCompleted),
+                        remainingStr = new Array(this.options.total - value + 1).join(this.options.charRemaining);
 
                     return utils.template(this.options.template, {
-                        inserted: insertedStr,
-                        deleted: deletedStr,
+						completed: completedStr,
+						remaining: remainingStr,
                         total: this.options.total
                     });
                 }
