@@ -4,35 +4,59 @@
 <head>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="demo.css">
+	<!-- build:css text-progress.min.css -->
+	<link rel="stylesheet" href="../src/text-progress.css">
+	<!-- endbuild -->
 </head>
 
 <body>
 
-<!-- http://purecss.io/start/ -->
-<!-- http://www.w3schools.com/charsets/ref_html_entities_4.asp -->
+	<!-- http://purecss.io/start/ -->
+	<!-- http://www.w3schools.com/charsets/ref_html_entities_4.asp -->
 
-<div class="content">
+	<a href="https://github.com/dfsq/text-progress">
+		<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+	</a>
 
-	<h1>
-		Text Progress
-		<span class="header-progress progress"></span>
-	</h1>
+	<div class="content">
 
-	<p>TextProgress is a very simple text-based progress indicator. Insipored by terminal like proress bars it can be used to render simlpe progress.</p>
+		<header>
+			<h1>
+				<span class="text">TextProgress</span>
+				<span class="header-progress progress"></span>
+			</h1>
+		</header>
 
-	<h3>What it's not</h3>
+		<p>TextProgress is a very simple text-based progress indicator. Insipored by terminal like proress bars it can be used to render simlpe progress.</p>
 
-	<p>TextProgress is not progress bar in the sctrict sense. It doesn't have methods for animation or nice transitions. All it does is provide textual rendering of the current state of the process, etc.</p>
+		<h3>Usage</h3>
 
-	<h3>API</h3>
+		<p>Installation useing bower:</p>
 
-</div>
+		<pre><code>bower install --save text-progress</code></pre>
+
+		Or simply download <code>text-progress.js</code> and <code>text-progress.css</code> files and put them into your assets folder.
+
+		<h3>What it's not</h3>
+
+		<p>TextProgress is not progress bar in the strict sense. It doesn't have methods for animation or nice transitions. All it does is provide textual rendering of the current state of the process, meaning reprecentation of the current value, process etc. out of the total.</p>
+
+		<h3>API</h3>
+
+		<p>TODO ...</p>
+
+		<footer>
+			<p>Copyright &copy; Aliaksandr Astashenkau 2015</p>
+		</footer>
+
+	</div>
 
 	<!-- build:js text-progress.min.js -->
 	<script src="../src/text-progress.js"></script>
 	<!-- endbuild -->
-
 	<script src="demo.js"></script>
 
 </body>

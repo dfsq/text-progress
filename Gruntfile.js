@@ -2,13 +2,7 @@
 
 module.exports = function(grunt) {
 
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-usemin');
-	grunt.loadNpmTasks('grunt-karma');
-	grunt.loadNpmTasks('grunt-gh-deploy');
+	require("load-grunt-tasks")(grunt);
 
 	grunt.initConfig({
 
@@ -44,6 +38,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		cssmin: {
+			target: {
+				files: {
+					'dist/<%= pkg.name %>.min.css': 'src/<%= pkg.name %>.css'
+				}
+			}
+		},
+
 		uglify: {
 			build: {
 				options: {
@@ -51,14 +53,13 @@ module.exports = function(grunt) {
 					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n'
 				},
 				files: {
-					'dist/<%= pkg.name %>.min.js': 'src/<%= pkg.name %>.js',
-					'dist/<%= pkg.name %>.min.css': 'src/<%= pkg.name %>.css'
+					'dist/<%= pkg.name %>.min.js': 'src/<%= pkg.name %>.js'
 				}
 			}
 		},
 
 		usemin: {
-			html: ['demo/index.html']
+			html: ['tmp/index.html']
 		},
 
 		karma: {
@@ -72,8 +73,8 @@ module.exports = function(grunt) {
 
 		ghDeploy: {
 			options: {
-				repository: '<%= pkg.repositiry.url %>',
-				deployPath: 'demo'
+				repository: '<%= pkg.repository.url %>',
+				deployPath: 'tmp'
 			}
 		}
 	});
@@ -81,17 +82,18 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		//'karma:unit',
 		'clean:pre',
-		'uglify',
-		'copy',
-		'clean:post',
-		//'usemin'
+		'cssmin',
+		'uglify'
 	]);
 
 	grunt.registerTask('deploy', function() {
-		grunt.task.run('build');
-		grunt.task.run('karma:dist');
 		grunt.task.run('clean:deploy');
+		grunt.task.run('build');
+		grunt.task.run('copy');
+		//grunt.task.run('karma:dist');
+		grunt.task.run('usemin');
 		grunt.task.run('ghDeploy');
+		grunt.task.run('clean:deploy');
 	});
 
 	grunt.registerTask('server', ['connect']);

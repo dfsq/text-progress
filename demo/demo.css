@@ -1,0 +1,39 @@
+body {
+	background: url(bg.png);
+	color: #EEE;
+	font-family: 'Roboto', sans-serif;
+}
+
+.content {
+	margin: 0 auto 50px;
+	padding: 0 2em;
+	max-width: 800px;
+	line-height: 1.6em;
+}
+.content h1 {
+	font-size: 3.5em;
+	margin: 70px 0 60px;
+	font-family: 'PT Mono';
+	font-weight: normal;
+}
+.content h1	.text {
+	float: left;
+	margin-right: .4em;
+}
+
+.content h3 {
+	font-size: 1.5em;
+	margin: 2em 0 1em;
+	color: #3A9244;
+}
+
+.content pre {
+	background: rgba(228, 228, 228, 0.1);
+	padding: 10px;
+}
+
+.content footer {
+	color: #888;
+	text-align: center;
+	font-size: .8em;
+}
