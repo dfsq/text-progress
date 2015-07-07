@@ -2,7 +2,15 @@
 
 Simple text-based progress indicators.
 
-## Insalation
+## Instalation
+
+Installation with bower:
+
+```
+bower install --save text-progress
+```
+
+Or simply download dist folder from the repository and put in your assets folder.
 
 ## Demo
 
