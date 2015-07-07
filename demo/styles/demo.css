@@ -3,6 +3,10 @@ body {
 	color: #EEE;
 	font-family: 'Roboto', sans-serif;
 }
+.pure-button {
+	font-family: 'Roboto', sans-serif;
+	margin-left: 10px;
+}
 
 .content {
 	margin: 0 auto 50px;
@@ -36,4 +40,12 @@ body {
 	color: #888;
 	text-align: center;
 	font-size: .8em;
+}
+
+
+/* common */
+.pull-right {float: right;}
+
+.button-xsmall {
+    font-size: 70%;
 }
