@@ -8,6 +8,30 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		banner: '/**\n' +
+				' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %>\n' +
+        		' * @desciption <%= pkg.description %>\n' +
+        		' * @copyright <%= pkg.author %>.\n' +
+        		' * @licence MIT.\n' +
+        		' */',
+
+		usebanner: {
+			dist: {
+				options: {
+					position: 'top',
+					banner: '<%= banner %>'
+				},
+				files: {
+					src: [
+						'dist/<%= pkg.name %>.js',
+						'dist/<%= pkg.name %>.min.js',
+						'dist/<%= pkg.name %>.css',
+						'dist/<%= pkg.name %>.min.css'
+					]
+				}
+			}
+		},
+
 		connect: {
 			server: {
 				options: {
@@ -35,6 +59,12 @@ module.exports = function(grunt) {
 					{src: 'README.md', dest: 'tmp/README.md'},
 					{expand: true, flatten: true, src: ['dist/*'], dest: 'tmp/'}
 				]
+			},
+			build: {
+				files: [
+					{src: 'src/<%= pkg.name %>.js', dest: 'dist/<%= pkg.name %>.js'},
+					{src: 'src/<%= pkg.name %>.css', dest: 'dist/<%= pkg.name %>.css'}
+				]
 			}
 		},
 
@@ -50,7 +80,7 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					mangle: false,
-					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n'
+					//banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n'
 				},
 				files: {
 					'dist/<%= pkg.name %>.min.js': 'src/<%= pkg.name %>.js'
@@ -82,8 +112,10 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		//'karma:unit',
 		'clean:pre',
+		'copy:build',
 		'cssmin',
-		'uglify'
+		'uglify',
+		'usebanner:dist'
 	]);
 
 	grunt.registerTask('deploy', function() {

@@ -44,8 +44,8 @@ body {
 
 
 /* common */
+a {color: #7396E0;}
 .pull-right {float: right;}
-
 .button-xsmall {
     font-size: 70%;
 }

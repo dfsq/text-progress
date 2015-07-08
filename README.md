@@ -20,9 +20,13 @@ http://dfsq.github.io/text-progress/
 
 ## API
 
-* **set**
-* **increment**
-* **getPercent**
+TextProgress uses [UMD](https://github.com/umdjs/umd/blob/master/returnExports.js) pattern to export itself either as CommonJS/AMD module or global constructor.
+
+Instance object has few methods to control behavior:
+
+* **set** - Sets the current absolute value of the progress (not percent).
+* **increment** - Increment progress by specified value. Takes single numeric argument. Adds up to current *value*.
+* **getPercent** - Get current progress percent value.
 
 ## License
 
