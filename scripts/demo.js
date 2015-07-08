@@ -28,7 +28,7 @@ var download = new TextProgress({
     type: {
         name: 'terminal',
         width: 10,
-        charRemaining: '-',
+        charRemaining: '&minus;',
         template: '[${percent}% <span class="completed">${completed}</span><span class="remaining">${remaining}</span>]'
     },
     element: document.querySelector('#terminal-percent'),
@@ -38,7 +38,7 @@ download.set(0);
 
 var inter = setInterval(function() {
     if (download.getPercent() >= 100) {
-        clearTimeout(inter);    
+        clearTimeout(inter);
     }
     else {
         download.increment(1);
