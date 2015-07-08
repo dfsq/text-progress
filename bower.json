@@ -1,7 +1,7 @@
 {
   "name": "text-progress",
   "main": "dist/text-progress.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/dfsq/text-progress",
   "authors": [
     "Aliaksandr Astashenkau <dfsq.dfsq@gmail.com>"
