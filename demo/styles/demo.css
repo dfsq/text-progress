@@ -49,3 +49,8 @@ body {
 .button-xsmall {
     font-size: 70%;
 }
+
+/* demo styles */
+#demo-1 .progress .remaining {
+	color: red;
+}
