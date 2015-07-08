@@ -107,13 +107,26 @@ var inter = setInterval(function() {
 
 		<h3>API</h3>
 
+		<p>
+			TextProgress uses <a href="https://github.com/umdjs/umd/blob/master/returnExports.js" target="_blank">UMD</a> pattern to export itself either as CommonJS/AMD module or global constructor.
+		</p>
+
+		<p>Instance object has few methods to control behavior:</p>
+
 		<ul>
 			<li>
-				<strong>set</strong>
+				<strong>set</strong> - Sets the current absolute value of the progress (not percent).
 			</li>
-			<li><strong>increment</strong></li>
-			<li><strong>getPercent</strong></li>
+			<li>
+				<strong>increment</strong> - Increment progress by specified value. Takes single numeric argument. Adds up to current <em>value</em>.
+			</li>
+			<li>
+				<strong>getPercent</strong> - Get current progress percent value.
+			</li>
 		</ul>
+
+		<br>
+		<br>
 
 		<footer>
 			<p>Copyright &copy; Aliaksandr Astashenkau 2015</p>

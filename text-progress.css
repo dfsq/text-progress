@@ -4,4 +4,10 @@
  * @copyright Aliaksandr Astashenkau <dfsq.dfsq@gmail.com>.
  * @licence MIT.
  */
-.progress{font-family:monospace,'Courier New',Courier;white-space:pre}.progress .completed{color:#3dac4a}
+.progress {
+	font-family: monospace, 'Courier New', Courier;
+	white-space: pre;
+}
+.progress .completed {
+	color: #3dac4a;
+}
