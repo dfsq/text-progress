@@ -44,7 +44,11 @@
 
 		<h3>Usage</h3>
 
-		<p>Create instance of TextProgress with of of predefined progress types:</p>
+		<p>Create instance of TextProgress with one of predefined progress types.</p>
+
+		<p>
+			<h4><code>&bullet; changes</code>:</h4>
+		</p>
 
 		<pre class="language-javascript"><code>
 var changes = new TextProgress({
@@ -53,27 +57,48 @@ var changes = new TextProgress({
 		total: 6,
 		template: '${total} <span class="completed">${completed}</span><span class="remaining">${remaining}</span>'
 	},
-	element: document.querySelector('.header-progress')
+	element: document.querySelector('#git-log')
 });
 changes.set(4);</code></pre>
 
-		<h4>Result</h4>
+		<p>Result:</p>
 
 		<div class="demo">
 			<pre>modified README.md  |  <span id="git-log"></span></pre>
 		</div>
 
-		<script id="demo1">
-			var changes = new TextProgress({
-				type: {
-					name: 'changes',
-					total: 6,
-					template: '${total} <span class="completed">${completed}</span><span class="remaining">${remaining}</span>'
-				},
-				element: document.querySelector('#git-log')
-			});
-			changes.set(4);
-		</script>
+
+		<p>
+			<h4><code>&bullet; terminal</code>:</h4>
+		</p>
+
+		<pre class="language-javascript"><code>
+var download = new TextProgress({
+    type: {
+        name: 'terminal',
+        width: 10,
+        charRemaining: '-',
+        template: '[${percent}% <span class="completed">${completed}</span><span class="remaining">${remaining}</span>]'
+    },
+    element: document.querySelector('#terminal-percent'),
+    max: 100
+});
+download.set(0);
+
+var inter = setInterval(function() {
+    if (download.getPercent() >= 100) {
+        clearTimeout(inter);    
+    }
+    else {
+        download.increment(1);
+    }
+}, 200);</code></pre>
+
+		<p>Result:</p>
+
+		<div class="demo">
+			<pre>Downloaded: <span id="terminal-percent"></span> <button class="pull-right button-xsmall pure-button" data-percent="43">Set 43%</button> <button class="pull-right button-xsmall pure-button" data-percent="10">Set 10%</button></pre>
+		</div>
 
 
 		<h3>What it's not</h3>
@@ -82,7 +107,13 @@ changes.set(4);</code></pre>
 
 		<h3>API</h3>
 
-		<p>TODO ...</p>
+		<ul>
+			<li>
+				<strong>set</strong>
+			</li>
+			<li><strong>increment</strong></li>
+			<li><strong>getPercent</strong></li>
+		</ul>
 
 		<footer>
 			<p>Copyright &copy; Aliaksandr Astashenkau 2015</p>

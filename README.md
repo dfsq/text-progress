@@ -1,14 +1,28 @@
 # text-progress
 
-Simple text-based progress indicators.
+TextProgress is a very simple text-based progress indicator. Insipored by terminal like proress bars it can be used to render simlpe progress.
 
-## Insalation
+## Installation
+
+Installation with bower:
+
+```
+bower install --save text-progress
+```
+
+Or simply download dist folder from the repository and put in your assets folder.
 
 ## Demo
 
 Take a look at hosted demo
 
 http://dfsq.github.io/text-progress/
+
+## API
+
+* **set**
+* **increment**
+* **getPercent**
 
 ## License
 
