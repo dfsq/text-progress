@@ -79,8 +79,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				options: {
-					mangle: false,
-					//banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n'
+					mangle: false
 				},
 				files: {
 					'dist/<%= pkg.name %>.min.js': 'src/<%= pkg.name %>.js'
@@ -92,12 +91,14 @@ module.exports = function(grunt) {
 			html: ['tmp/index.html']
 		},
 
-		karma: {
-			unit: {
-				configFile: 'karma.conf.js'
-			},
-			dist: {
-				configFile: 'karma.dist.conf.js'
+		mocha: {
+			test: {
+				src: ['test/index.html'],
+				options: {
+					log: true,
+					reporter: 'Spec',
+					run: true
+				}
 			}
 		},
 
@@ -110,7 +111,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('build', [
-		//'karma:unit',
+		'mocha:test',
 		'clean:pre',
 		'copy:build',
 		'cssmin',
@@ -122,7 +123,7 @@ module.exports = function(grunt) {
 		grunt.task.run('clean:deploy');
 		grunt.task.run('build');
 		grunt.task.run('copy');
-		//grunt.task.run('karma:dist');
+		//grunt.task.run('mocha:dist');
 		grunt.task.run('usemin');
 		grunt.task.run('ghDeploy');
 		grunt.task.run('clean:deploy');
@@ -130,7 +131,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('server', ['connect']);
 
-	grunt.registerTask('test', ['karma:unit']);
+	grunt.registerTask('test', ['mocha:test']);
 
 	grunt.registerTask('default', ['server']);
 
