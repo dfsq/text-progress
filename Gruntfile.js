@@ -129,10 +129,10 @@ module.exports = function(grunt) {
 		grunt.task.run('clean:deploy');
 	});
 
-	grunt.registerTask('server', ['connect']);
+	grunt.registerTask('serve', ['connect']);
 
 	grunt.registerTask('test', ['mocha:test']);
 
-	grunt.registerTask('default', ['server']);
+	grunt.registerTask('default', ['serve']);
 
 };
