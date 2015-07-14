@@ -1,4 +1,4 @@
-# text-progress
+# text-progress [![Build Status](https://api.travis-ci.org/dfsq/text-progress.png)](https://travis-ci.org/dfsq/text-progress)
 
 TextProgress is a very simple text-based progress indicator. Insipored by terminal like proress bars it can be used to render simlpe progress.
 

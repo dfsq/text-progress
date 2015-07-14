@@ -1,5 +1,5 @@
 /**
- * text-progress - v0.1.1 - 08-07-2015
+ * text-progress - v0.1.1 - 15-07-2015
  * @desciption TextProgress is a simple text-based progress indicator.
  * @copyright Aliaksandr Astashenkau <dfsq.dfsq@gmail.com>.
  * @licence MIT.
